@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>武当派</title>
+		<meta name="author" content="Sxfszwr" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-wysiwyg.js"></script>
+		<!-- Date: 2013-11-19 -->
+		<style>
+			body {
+				font-family: 黑体;
+				margin: 0;
+				padding: 0;
+			}
+			hr {
+				color: gray;
+			}
+			.menubar:hover {
+				background-color: #99CC66;
+			}
+			.box {
+				position: relative;
+				height: 600px; /* 此为元素背景图像实际高度 X 元素背景图像个数 */
+				margin: 0 auto;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-attachment: fixed; /* 使背景图像相对于窗体固定 */
+				background-size: cover; /* 取值auto | cover | contain */
+				/* 背景图像的真实大小 */
+				/* 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器 */
+				/* 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内 */
+				overflow: hidden;
+				text-align: center;
+			}
+			.box-1 {
+				background-image: url(image/p1.jpg);
+			}
+			.box-2 {
+				background-image: url(image/p2.jpg);
+			}
+			p#back-to-top {
+				z-index: 9999;
+				position: fixed;
+				bottom: 60px;
+				right: 30px;
+			}
+			p#back-to-top a {
+				text-align: center;
+				text-decoration: none;
+				color: #336699;
+				display: block;
+				width: 80px;
+				/*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+				-moz-transition: color 1s;
+				-webkit-transition: color 1s;
+				-o-transition: color 1s;
+			}
+			p#back-to-top a:hover {
+				color: #979797;
+			}
+			p#back-to-top a span {
+				background: #d1d1d1 url(image/arrow-up.png) no-repeat center center;
+				border-radius: 6px;
+				display: block;
+				height: 80px;
+				width: 80px;
+				margin-bottom: 5px;
+				/*使用CSS3中的transition属性给<span>标签背景颜色添加渐变效果*/
+				-moz-transition: background 1s;
+				-webkit-transition: background 1s;
+				-o-transition: background 1s;
+			}
+			#back-to-top a:hover span {
+				background: #979797 url(image/arrow-up.png) no-repeat center center;
+			}
+			#todayadvice:hover{
+				background-color: gray;
+				color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="back-to-top">
+			<a href="#top"><span></span>Back to top</a>
+		</p>
+		<div id="topbar" style="width: 100%;height:50px;background-color: black;color: white;">
+			<div style="float:left;font-family: 黑体;font-size: 30px;margin-left: 83px;padding-top: 5px;width: 120px;">
+				武当美文
+			</div>
+			<div class="menubar" style="float:left;margin-left: 50px;padding-top: 15px;font-size: 15px;height: 50px;cursor: pointer;">
+				UI设计
+			</div>
+			<div class="menubar" style="float:left;margin-left: 50px;padding-top: 15px;font-size: 15px;height: 50px;cursor: pointer;">
+				美文鉴赏
+			</div>
+			<div class="menubar" style="float:left;margin-left: 50px;padding-top: 15px;font-size: 15px;height: 50px;cursor: pointer;">
+				北漂日记
+			</div>
+			<div class="menubar" style="float:left;margin-left: 50px;padding-top: 15px;font-size: 15px;height: 50px;cursor: pointer;">
+				浏览圈子
+			</div>
+			<div class="menubar" style="float:left;margin-left: 50px;padding-top: 15px;font-size: 15px;height: 50px;cursor: pointer;">
+				关于我们
+			</div>
+			<div style="float: left;">
+				<input  style="width: 200px;height:30px;margin-left: 220px;margin-top: 10px;" placeholder="请输入关键字并按回车搜索"/>
+			</div>
+			<div style="float: left;">
+				<button style="margin-left: 25px;margin-top: 8px;float:left;" type="submit" class="btn btn-default">
+					登录
+				</button>
+				<button style="margin-left: 15px;margin-top: 8px;" type="submit" class="btn btn-default">
+					注册
+					</butto n>
+			</div>
+		</div>
+
+		<div style="height:300px;">
+			<div style="margin-left: 150px;margin-top: 50px;float: left;">
+				<img src="image/bw1.jpg" />
+			</div>
+			<div style="float: left;margin-left: 50px;margin-top: 50px;width: 350px;font-size: 30px;">
+				<label>Here write something to descrip...</label>
+				<button type="button" class="btn btn-primary btn-lg" style="margin-top: 60px;">
+					我要推荐美文
+				</button>
+			</div>
+		</div>
+		<div>
+			<div style="margin-left: 150px;float: left;width: 700px;">
+				<label id="todayadvice" style="font-size: 30px;">今日推荐</label>
+				<hr />
+				<h4 style="color: #99cc66;"><b>日落天通苑</b></h4>
+				<p>文/大宝宝</p>
+				<p>2013-10-11</p>
+				<p style="font: 宋体;width: 680px;">曾经，我对东北人有着很深的成见，就如同北京人对天通苑存在着成见一般。
+				天通苑，亚洲最大的社区，却不过是一堆劣质混凝土堆砌起来的房子，它到处是房子，
+				只有房子，恨不得所有角落都盖成房子，浩瀚楼宇遮挡了日月，压得人喘不过气来。<br /><br />
+                对北京人来说，天通苑是纽约的布鲁克林，是都市边缘的贫民窟，这里糟糕的基础设施建设和低廉混乱的租房机制，成为低收入者的理想栖息地。北京人买了或分了天通苑的房子，一般不会过来住，他们只在合同落实后驱车前来向中介索要银子，他们昂起头颅，叉起腰肢，仿佛驾临八大胡同的亲王，一面数清老鸨递来的分红，一面又不齿烟花柳巷的咸腥。对外地人来说，天通苑是东北人的天下。从开发商到中介公司老板，从洗头房到小商小贩，到处飘荡着高分贝的关外口音，大家靠着胆识和干练在这里一点点起步，一点点被这里收养。世人给东北人加了太多不雅的标签，而那些自认为“生下来就是爷”的北京人和自认为“生下来就老实”的中原人干脆将五环外的东北人统称为“流氓”。<br /><br />
+                “什么叫流氓，”东东妈说：“那是人家有本事，你看看现在的有钱人，哪个是有文化的，有文化，像你这个，都是给人家打工的”，她摘下围裙塞进柜子，说：“我告诉你超，你可别在阿姨跟前儿说文化，阿姨什么有文化的没见过，去年还有个比你小好几岁的北大毕业生追我呢，我都没同意，光有文化有啥用啊，这世道就得有钱，没钱说啥都白使”。<br /><br />
+                她继续盯着我：“你说阿姨讲的在理儿不，你呀，净扯那些个没用的，你好好努力赚大钱，发财了我就把东东给你，到时候让你叫我声老丈母娘”，我说：“哈哈”，她说：“咋啦，瞧不起我们东东啊，你现在要我还不给呢，想什么呢”。<br /><br />
+                她甩完手走出去，又走回来，在我后脑勺扇了一巴掌说：“你个臭小子”。<br /><br />
+				2010年秋天，因为公司迁至崇文门，我从通州搬到了天通苑，和其他矫情的白领一样，带着不安。我没办法，薪水要交公粮，租房预算有限，而去崇文门最经济的路程便是地铁五号线。很多北漂都为房子纠结过，地段环境好的房子多在四环内，房租也不菲，全北京租金低廉房源充足入住又迅速的，只剩下了天通苑。<br/><br /> 
+				合租半月，我迎来更大不安。九十平的三居室，住着不下十个人，紧邻我的主卧，是东东和她的同性恋大派对，女T拉拉小受，分不清多少人进出。客厅打成两个隔断，南隔断住着KTV陪唱姑娘和她的90后小白脸混混，北隔断住着大个子房地产销售男，以及时不时前来媾和的同事兼女友。北次卧是个丰腴白皙的短发姐姐，她男人是包工头，一月现身几次，也就是说这姐姐是个住外宅的三。<br /><br />
+				我在南次卧，是唯一的单身户，唯一的非东北籍，唯的一朝九晚五上班男。相比我的规范和苍白，我的邻居们充满活力，同性恋白天睡觉，晚上泡吧，大半夜结伴归来接着嗨。和他们前后脚到家的是陪唱姑娘与白脸混混，厨房吃一番，浴室洗一番，床上斗一番，几乎夜夜笙歌，白天睡醒接着干。大个子销售男不用按点上班，开大音量放流行歌曲，迎女友下榻，花一天时间将走廊、厨房、隔断收拾得一尘不染。<br /><br /> />
+				一更天，同性恋开始狂欢，边喝边唱，边唱边喊。他们起哄，男受因为滥交感染了阴虱，强调必须剃掉烧掉才能复原。他们内战，女T姐姐大声斥责男受弟弟，男受弟弟抄起地上的酒瓶子叫：“我跟你拼啦”，东东边拉边劝：“自己人跟自己人闹，有劲吗”。<br /><br />
+				</p>
+				<hr />
+				<label>喜欢</label><label></label><label></label>
+				<div>
+					
+				</div>
+				<hr />
+				<div></div>
+			</div>
+			<div float: left;margin-left: 50px;;width: 350px;font-size: 30px;>
+				
+			</div>
+
+		</div>
+		<div style="width: 5px;clear: both;"></div>
+		<div style="background-color: #cccccc;height: 300px;">
+			<div style="float: left;margin-left: 150px;margin-top: 30px;">
+				<img src="image/logo2.jpg" />
+			</div>
+
+			<div style="float: left;margin-left: 50px;margin-top: 30px;color: black;width: 300px;">
+				<p>
+					关于我们
+				</p>
+				<p>
+					我们是第一届步入工作的90后，夹杂着社会对我们的各种看法，叛逆、脑残，或许会让人们觉得是没有责任感的一代人。但是，我们有梦想，有坚持，为了自己心中那个目标，我们从未轻言放弃！
+				</p>
+				<br />
+				<p>
+					<a style=" text-decoration:none;cursor: pointer;">欢迎加入</a>
+				</p>
+			</div>
+			<div style="float: left;margin-left: 50px;margin-top: 30px;color: black;width: 200px;">
+				<p>
+					关注微信
+				</p>
+				<img src="image/erweima.png" style="border:5px solid white;"/>
+			</div>
+			<div style="float: left;margin-left: 50px;margin-top: 30px;color: black;width: 300px;">
+				<p>
+					官方QQ群
+				</p>
+				<div style="border-radius: 10px;border:1px solid white; width: 300px;height: 120px;background-color: #CCCC99;color: #003366;">
+					<br/>
+					<p>
+						&nbsp;&nbsp;官方会员专用1群：179931798
+					</p>
+					&nbsp;&nbsp;--------------------------
+					<p>
+						&nbsp;&nbsp;官方会员专用2群：179931798
+					</p>
+				</div>
+			</div>
+		</div>
+		<div style="position:relative; clear: both;padding:0 0 0 150px; background-color: #cccccc;margin-top: -30px;">
+			<p>
+				Copyright © 2013 武当派社区wudangpai.com版权所有     京ICP备11048772号-2
+			</p>
+			<br />
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//首先将#back-to-top隐藏
+			$("#back-to-top").hide();
+			//当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+			$(function() {
+				$(window).scroll(function() {
+					if ($(window).scrollTop() > 100) {
+						$("#back-to-top").fadeIn(1500);
+
+					} else {
+						$("#back-to-top").fadeOut(700);
+					}
+				});
+				//当点击跳转链接后，回到页面顶部位置
+				$("#back-to-top").click(function() {
+					$('body,html').animate({
+						scrollTop : 0
+					}, 1000);
+					return false;
+				});
+			});
+		});
+	</script>
+</html>
+

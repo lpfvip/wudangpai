@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<include file="struts-default.xml" />
+	<constant name="struts.serve.static.browserCache" value="false"></constant>
+	<!-- 浏览器的缓存 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	<!-- 让静态的方法访问? -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!--struts 配置文件改变时候是否加载 -->
+
+	<package name="com/wudangpai/action" extends="struts-default">
+		<!-- 文件上传 -->
+		<!-- <action name="uploadAction" class="com.sunbird.action.UploadAction">
+
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/gif,application/x-zip-compressed,
+					image/jpeg,
+					text/html,text/css,application/x-shockwave-flash,
+					application/vnd.ms-powerpoint,audio/mpeg,application/pdf,
+					application/octet-stream,
+					text/plain 
+					
+			</param>
+			</interceptor-ref>
+
+			<interceptor-ref name="defaultStack" />
+
+			<param name="savePath">/upload</param>
+			<result>/res/success.jsp</result>
+			<result name="input">/res/bigfile.jsp</result>
+
+		</action> -->
+
+		<!-- 结束文件上传 -->
+
+		  
+	</package>
+	
+</struts>
