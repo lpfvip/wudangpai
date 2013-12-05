@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- changes from the defaults -->
+		<setting name="lazyLoadingEnabled" value="false" />
+	</settings>
+    <!-- lyp mapper 会用到 -->
+    <typeAliases>
+		<typeAlias alias="pet" type="com.lee.model.Pet"/>
+		<typeAlias alias="petreview" type="com.lee.model.PetReview"/>
+	</typeAliases>
+	
+    <mappers>
+    	<mapper resource="mapper/PetMapper.xml" />
+    	<mapper resource="mapper/PetReviewMapper.xml" />
+    </mappers>
+</configuration>
