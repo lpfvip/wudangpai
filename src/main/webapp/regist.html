@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>login</title>
+		<meta name="author" content="Sxfszwr" />
+		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background-image: url(image/bg.jpg);
+			}
+			.password {
+				width: 200px;
+			}
+			.footer {
+				margin-top: 100px;
+				background-color: white;
+				height: 80px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="border-radius:5px;-moz-box-shadow: 2px 2px 10px #909090;
+		-webkit-box-shadow: 2px 2px 10px #909090;
+		box-shadow:2px 2px 10px #909090; width: 600px;height: 400px;margin-left:350px;margin-top:100px; background-color:#339999 ;">
+			<br />
+			<h1 style="text-align: center;">Welcome to WuDang</h1>
+			<hr />
+			<div style="margin-left: 80px;">
+				<input class="form-control" style="width: 300px;margin-top:20px;" type="text" id="username" placeholder="Username" /><span class="glyphicon glyphicon-remove"></span>
+				<input style="width: 300px;margin-top:20px;" type="password" class="form-control" id="password" placeholder="Password" /><span class="glyphicon glyphicon-remove"></span>
+				<input style="width: 300px;margin-top:20px;" type="password" class="form-control" id="repeatpassword" placeholder="Repeatassword" onblur="checksame()"/><span class="glyphicon glyphicon-remove"></span>
+				<input style="width: 300px;margin-top:20px;" type="text" class="form-control" id="email" placeholder="E-mail" /><span class="glyphicon glyphicon-remove"></span>
+			</div>
+
+			<button style="margin-left: 190px;margin-top: 25px;height: 42px;" type="submit" class="btn btn-warning btn-lg">
+				注     册
+			</button>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+	
+		function checksame() {
+			var password = $("#password").val();
+			var repeatpassword = $("#repeatpassword").val();
+			if (password != repeatpassword) {
+				$("#repeatpassword").css('background-color','pink');
+				alert("两次输入不一致。")
+			}
+			if (password == repeatpassword) {
+				$("#repeatpassword").css('background-color','white');
+			}
+		}
+		
+	</script>
+</html>
+
