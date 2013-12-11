@@ -13,6 +13,7 @@
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.7</jdk.version>
 		<jetty.version>8.1.8.v20121106</jetty.version>
+		<mybatis.version>3.0.1</mybatis.version>
 	</properties>
 
 	<dependencies>
@@ -43,9 +44,19 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.0.1</version>
+			<version>${mybatis.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.26</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>WuDangPai</finalName>
@@ -64,6 +75,15 @@
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
 			</plugin>
+			<plugin>  
+                <groupId>org.mybatis.generator</groupId>  
+                <artifactId>mybatis-generator-maven-plugin</artifactId>  
+                <version>1.3.1</version>  
+                <configuration>  
+                    <verbose>true</verbose>  
+                    <overwrite>true</overwrite>  
+                </configuration>  
+            </plugin> 
 		</plugins>
 	</build>
 </project>
