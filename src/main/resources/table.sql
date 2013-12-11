@@ -34,4 +34,4 @@ CREATE TABLE  IF NOT EXISTS `pre_common_member`(
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`),
   KEY `groupid` (`groupid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Member' 
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Member'  
