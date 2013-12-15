@@ -117,28 +117,28 @@
 				<h4 style="margin-left: 10px;margin-top: 20px;"><span class="glyphicon glyphicon-user"> </span> 个人资料 <span id="downarrow" class="glyphicon glyphicon-chevron-down" style="cursor: pointer;margin-left: 50px;" onclick="showbaseInfo()"> </span></h4>
 				<hr />
 				<div id="baseInfoList" style="display: none;">
-					<p>
+					<p style="cursor: pointer;" onclick="tobaseInfo()">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 基本信息
 					</p>
-					<p>
+					<p style="cursor: pointer;" onclick="toeduInfo()">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 教育信息
 					</p>
-					<p>
+					<p style="cursor: pointer;" onclick="tojobInfo()">
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 职业信息
 					</p>
 					<hr />
 				</div>
-				<h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-picture"> </span> 更换头像 <span class="glyphicon glyphicon-chevron-down" style="cursor: pointer;margin-left: 50px;"> </span></h4>
+				<h4 id="headerimage" style="margin-left: 10px;cursor: pointer;" onclick="toimageInfo()"><span class="glyphicon glyphicon-picture"> </span> 更换头像 </h4>
 				<hr />
-				<h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-phone"> </span> 手机绑定 </h4>
+				<h4 id="phone" style="margin-left: 10px;cursor: pointer;" onclick="tobandInfo()"><span class="glyphicon glyphicon-phone"> </span> 手机绑定 </h4>
 				<hr />
-				<h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-th-large"> </span> 语言设置 </h4>
+				<h4 id="language" style="margin-left: 10px;cursor: pointer;" onclick="tolanguageInfo()"><span class="glyphicon glyphicon-th-large"> </span> 语言设置 </h4>
 
 			</div>
 			<div id="right" style="width: 800px;height:800px;float: left;background-color: white;padding-left: 50px;">
 				<h3 id="infoTitle">基本信息
-				<hr />
 				</h3>
+				<hr />
 				<div id="baseInfo" style="margin-top: -20px;">
 					以下信息将显示在个人资料页，方便大家了解你。
 					<br />
@@ -188,8 +188,30 @@
 				$("#downarrow").addClass("glyphicon");
 				$("#downarrow").addClass("glyphicon-chevron-down");
 			}
-
-			//未完待续
+		}
+		function tobaseInfo(){
+			var infoTitle = $("#infoTitle").text();
+			$("#baseInfoList").css('display', 'block');
+		}
+		function toeduInfo(){
+			$("#infoTitle").text("教育信息");
+			$("#baseInfo").css('display', 'none');
+		}
+		function tojobInfo(){
+			$("#infoTitle").text("职业信息");
+			$("#baseInfo").css('display', 'none');
+		}
+		function toimageInfo(){
+			$("#infoTitle").text("更换头像");
+			$("#baseInfo").css('display', 'none');
+		}
+		function tobandInfo(){
+			$("#infoTitle").text("绑定手机");
+			$("#baseInfo").css('display', 'none');
+		}
+		function tolanguageInfo(){
+			$("#infoTitle").text("语言设置");
+			$("#baseInfo").css('display', 'none');
 		}
 	</script>
 </html>
