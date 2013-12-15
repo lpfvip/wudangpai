@@ -168,7 +168,9 @@
 				</div>
 			</div>
 		</div>
-		<div style="clear:both; height: 20px;"></div>
+		<div style="clear:both; height: 20px;">
+			
+		</div>
 	</body>
 	<script type="text/javascript">
 		$("#birthdate").datepicker({
@@ -190,8 +192,8 @@
 			}
 		}
 		function tobaseInfo(){
-			var infoTitle = $("#infoTitle").text();
-			$("#baseInfoList").css('display', 'block');
+			var infoTitle = $("#infoTitle").text("基本信息");
+			$("#baseInfo").css('display', 'block');
 		}
 		function toeduInfo(){
 			$("#infoTitle").text("教育信息");
