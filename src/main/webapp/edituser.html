@@ -114,7 +114,7 @@
 		<div id="content" style="width: 1000px;margin-left: auto;margin-right: auto;margin-top: 20px;">
 			<div id="left" style="float: left;width: 200px;height:800px; background-color: #339999;color: white;">
 				<h2 style="margin-left: 10px;">账号设置</h2>
-				<h4 style="margin-left: 10px;margin-top: 20px;"><span class="glyphicon glyphicon-user"> </span> 个人资料 <span id="downarrow" class="glyphicon glyphicon-chevron-down" style="cursor: pointer;margin-left: 50px;" onclick="showbaseInfo()"> </span></h4>
+				<h4 style="margin-left: 10px;margin-top: 20px;cursor: pointer;" onclick="tobaseInfo()"><span class="glyphicon glyphicon-user"> </span> 个人资料 <span id="downarrow" class="glyphicon glyphicon-chevron-down" style="cursor: pointer;margin-left: 50px;" onclick="showbaseInfo()"> </span></h4>
 				<hr />
 				<div id="baseInfoList" style="display: none;">
 					<p style="cursor: pointer;" onclick="tobaseInfo()">
@@ -136,8 +136,7 @@
 
 			</div>
 			<div id="right" style="width: 800px;height:800px;float: left;background-color: white;padding-left: 50px;">
-				<h3 id="infoTitle">基本信息
-				</h3>
+				<h3 id="infoTitle">基本信息 </h3>
 				<hr />
 				<div id="baseInfo" style="margin-top: -20px;">
 					以下信息将显示在个人资料页，方便大家了解你。
@@ -166,54 +165,187 @@
 						</button>
 					</div>
 				</div>
+				<div id="eduInfo" style="margin-top: -20px; display: none;">
+					如若你非大连民族学院的学生，请勿冒充。
+					<br />
+					<br />
+					<div style="margin-left: 50px;">
+						<h4>选择你所在的学院与年级:</h4>
+						<br />
+						<div class="col-lg-5" style="width: 400px;margin-left: -15px;">
+							<div class="input-group" >
+								<input type="text" class="form-control" placeholder="2009级" style="border-radius: 0;" readonly>
+								<div class="input-group-btn" style="margin-left: -300px;">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										年级<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu pull-right">
+										<li>
+											<a>1997级</a>
+										</li>
+										<li>
+											<a>1998级</a>
+										</li>
+										<li>
+											<a>1999级</a>
+										</li>
+										<li>
+											<a>2000级</a>
+										</li>
+										<li>
+											<a>2001级</a>
+										</li>
+										<li>
+											<a>2002级</a>
+										</li>
+										<li>
+											<a>2003级</a>
+										</li>
+										<li>
+											<a>2004级</a>
+										</li>
+										<li>
+											<a>2005级</a>
+										</li>
+										<li>
+											<a>2006级</a>
+										</li>
+										<li>
+											<a>2007级</a>
+										</li>
+										<li>
+											<a>2008级</a>
+										</li>
+										<li>
+											<a>2009级</a>
+										</li>
+										<li>
+											<a>2010级</a>
+										</li>
+										<li>
+											<a>2011级</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<br /><br /><br />
+						<div class="col-lg-5" style="width: 400px;margin-left: -15px;">
+							<div class="input-group" >
+								<input type="text" class="form-control" placeholder="计算机科学与工程学院" style="border-radius: 0;" readonly>
+								<div class="input-group-btn" style="margin-left: -300px;">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										学院<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu pull-right">
+										<li>
+											<a onclick="choosevalue()">value</a>
+										</li>
+										<li>
+											<a>文法学院</a>
+										</li>
+										<li>
+											<a>经济管理学院</a>
+										</li>
+										<li>
+											<a>机电与信息工程学院</a>
+										</li>
+										<li>
+											<a>环境与资源学院</a>
+										</li>
+										<li>
+											<a>...</a>
+										</li>
+										<li class="divider"></li>
+										<li>
+											<a href="#">路人学院</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button style="margin-top: 100px;margin-left: -250px;" type="submit" class="btn btn-warning" onclick="regist()">
+							保存修改
+						</button>
+				</div>
+				<div id="jobInfo" style="margin-top: -20px; display: none;">
+					让我们知道你的公司，给校友们更多的工作机会。
+					<br />
+					<br />
+					<div style="margin-left: 50px;">
+						<h4></h4>
+						<br />
+						<input class="form-control" type="text" id="company" placeholder="所在公司" style="width: 300px; border-radius: 0px;"/>
+						<input class="form-control" type="text" id="jobtitle" placeholder="职位" style="width: 300px; border-radius: 0px;margin-top: 20px;"/>
+						<button style="margin-top: 50px;margin-left: 200px;" type="submit" class="btn btn-warning" onclick="regist()">
+							保存修改
+						</button>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div style="clear:both; height: 20px;">
-			
-		</div>
+			<div style="clear:both; height: 20px;">
+
+			</div>
 	</body>
 	<script type="text/javascript">
 		$("#birthdate").datepicker({
-				format: 'mm/dd/yyyy'
-			});
+			format : 'mm/dd/yyyy'
+		});
 		function showbaseInfo() {
 			var arrowClass = $("#downarrow").attr('class');
-			if(arrowClass == "glyphicon glyphicon-chevron-down") {
+			if (arrowClass == "glyphicon glyphicon-chevron-down") {
 				$("#baseInfoList").css('display', 'block');
 				$("#downarrow").removeClass();
 				$("#downarrow").addClass("glyphicon");
 				$("#downarrow").addClass("glyphicon-chevron-up");
 
-			}else{
+			} else {
 				$("#baseInfoList").css('display', 'none');
 				$("#downarrow").removeClass();
 				$("#downarrow").addClass("glyphicon");
 				$("#downarrow").addClass("glyphicon-chevron-down");
 			}
 		}
-		function tobaseInfo(){
+
+		function tobaseInfo() {
 			var infoTitle = $("#infoTitle").text("基本信息");
 			$("#baseInfo").css('display', 'block');
+			$("#eduInfo").css('display', 'none');
+			$("#jobInfo").css('display', 'none');
 		}
-		function toeduInfo(){
+
+		function toeduInfo() {
 			$("#infoTitle").text("教育信息");
 			$("#baseInfo").css('display', 'none');
+			$("#jobInfo").css('display', 'none');
+			$("#eduInfo").css('display', 'block');
 		}
-		function tojobInfo(){
+
+		function tojobInfo() {
 			$("#infoTitle").text("职业信息");
 			$("#baseInfo").css('display', 'none');
+			$("#eduInfo").css('display', 'none');
+			$("#jobInfo").css('display', 'block');
 		}
-		function toimageInfo(){
+
+		function toimageInfo() {
 			$("#infoTitle").text("更换头像");
 			$("#baseInfo").css('display', 'none');
 		}
-		function tobandInfo(){
+
+		function tobandInfo() {
 			$("#infoTitle").text("绑定手机");
 			$("#baseInfo").css('display', 'none');
 		}
-		function tolanguageInfo(){
+
+		function tolanguageInfo() {
 			$("#infoTitle").text("语言设置");
 			$("#baseInfo").css('display', 'none');
+		}
+		function choosevalue(var aaa){
+			//alert("nimeimei");
+			alert($().text());
 		}
 	</script>
 </html>
