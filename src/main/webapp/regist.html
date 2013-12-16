@@ -30,37 +30,56 @@
 	<body>
 		<div style="border-radius:5px;-moz-box-shadow: 2px 2px 10px #909090;
 		-webkit-box-shadow: 2px 2px 10px #909090;
-		box-shadow:2px 2px 10px #909090; width: 600px;height: 400px;margin-left:350px;margin-top:100px; background-color:#339999 ;">
+		box-shadow:2px 2px 10px #909090; width: 600px;height: 500px;margin-left:350px;margin-top:40px; background-color:#339999 ;">
 			<br />
 			<h1 style="text-align: center;">Welcome to WuDang</h1>
 			<hr />
-			<div style="margin-left: 80px;">
-				<input class="form-control" style="width: 300px;margin-top:20px;" type="text" id="username" placeholder="Username" /><span class="glyphicon glyphicon-remove"></span>
-				<input style="width: 300px;margin-top:20px;" type="password" class="form-control" id="password" placeholder="Password" /><span class="glyphicon glyphicon-remove"></span>
-				<input style="width: 300px;margin-top:20px;" type="password" class="form-control" id="repeatpassword" placeholder="Repeatassword" onblur="checksame()"/><span class="glyphicon glyphicon-remove"></span>
-				<input style="width: 300px;margin-top:20px;" type="text" class="form-control" id="email" placeholder="E-mail" /><span class="glyphicon glyphicon-remove"></span>
-			</div>
+			<div style="margin-left: 80px;float: left;">
+				<input class="form-control" style="width: 300px;margin-top:20px;" type="text" id="username" placeholder="Username" style="float: left;float: left;"/>
+				<p style="margin-top: 10px;">
+					用户名希望大家都用武林人士称号
+				</p>
+				<input style="width: 300px;margin-top:10px;" type="password" class="form-control" id="password" placeholder="Password"/>
+				<p style="margin-top: 10px;">
+					密码不能短于6位
+				</p>
+				<input style="width: 300px;margin-top:10px;" type="password" class="form-control" id="repeatpassword" placeholder="RepeatPassword" onblur="checksame()"/>
+				<p style="margin-top: 10px;">
+					别手贱写错咯
+				</p>
+				<input style="width: 300px;margin-top:10px;" type="text" class="form-control" id="email" placeholder="E-mail" />
+				<p style="margin-top: 10px;">
+					在下面输入群主给你的邀请码
+				</p>
+				<input style="width: 300px;margin-top:10px;" type="text" class="form-control" id="invitecode" placeholder="InviteCode" />
 
-			<button style="margin-left: 190px;margin-top: 25px;height: 42px;" type="submit" class="btn btn-warning btn-lg">
-				注     册
-			</button>
+			</div>
+			<div style="float: left;">
+				<button style="margin-top: 318px;margin-left:50px;float: left;" type="submit" class="btn btn-warning" onclick="regist()">
+					注
+					册
+				</button>
+			</div>
 		</div>
 
 	</body>
 	<script type="text/javascript">
-	
 		function checksame() {
 			var password = $("#password").val();
 			var repeatpassword = $("#repeatpassword").val();
 			if (password != repeatpassword) {
-				$("#repeatpassword").css('background-color','pink');
+				$("#password").css('background-color', 'pink');
+				$("#repeatpassword").css('background-color', 'pink');
 				alert("两次输入不一致。")
 			}
 			if (password == repeatpassword) {
-				$("#repeatpassword").css('background-color','white');
+				$("#repeatpassword").css('background-color', 'white');
+				$("#password").css('background-color', 'white');
 			}
 		}
-		
+		function regist(){
+			alert("注册");
+		}
+
 	</script>
 </html>
-
