@@ -8,6 +8,7 @@
 		<meta name="author" content="Sxfszwr" />
 
 		<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
 		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
@@ -96,7 +97,7 @@
 				background-color: #979797;
 			}
 		</style>
-		
+
 	</head>
 	<body>
 		<div id="topbar" style="width: 100%;height:50px;background-color: black;color: white;">
@@ -292,11 +293,13 @@
 				</div>
 				<div id="imageInfo" style="display: none;">
 					<div style="height: 400px;">
-						<img id="target" src="image/xuwanting.jpg" style="max-height: 400px;max-width: 400px;"/>
-						<img src="image/xuwanting.jpg" style="max-height: 100px;max-width: 100px;margin-top: -230px;margin-left: 30px;" />
+						<img id="xuwanting" src="image/xuwanting.jpg" />
+						<img src="image/xuwanting.jpg" style="max-height: 100px;max-width: 100px;" />
 					</div>
 					<div>
-						<p>选择头像上传</p>
+						<p>
+							选择头像上传
+						</p>
 					</div>
 				</div>
 			</div>
@@ -388,6 +391,11 @@
 			var value = $("#jiyuan").text();
 			$("#colloege").attr('value', value);
 		}
+
+
+		$(document).ready(function() {
+			$("#xuwanting").Jcrop();
+		});
 
 	</script>
 </html>
