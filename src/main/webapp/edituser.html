@@ -6,11 +6,15 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>修改用户信息</title>
 		<meta name="author" content="Sxfszwr" />
+
+		<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
 		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+
 		<!-- Date: 2013-11-19 -->
 		<style>
 			* {
@@ -92,6 +96,7 @@
 				background-color: #979797;
 			}
 		</style>
+		
 	</head>
 	<body>
 		<div id="topbar" style="width: 100%;height:50px;background-color: black;color: white;">
@@ -181,19 +186,19 @@
 									</button>
 									<ul class="dropdown-menu pull-right">
 										<li>
-											<a>1997级</a>
+											<a id="1">1997级</a>
 										</li>
 										<li>
-											<a>1998级</a>
+											<a id="2">1998级</a>
 										</li>
 										<li>
-											<a>1999级</a>
+											<a id="3">1999级</a>
 										</li>
 										<li>
-											<a>2000级</a>
+											<a id="4">2000级</a>
 										</li>
 										<li>
-											<a>2001级</a>
+											<a id="5">2001级</a>
 										</li>
 										<li>
 											<a>2002级</a>
@@ -229,29 +234,31 @@
 								</div>
 							</div>
 						</div>
-						<br /><br /><br />
+						<br />
+						<br />
+						<br />
 						<div class="col-lg-5" style="width: 400px;margin-left: -15px;">
 							<div class="input-group" >
-								<input type="text" class="form-control" placeholder="计算机科学与工程学院" style="border-radius: 0;" readonly>
+								<input id="colloege" type="text" class="form-control" value="计算机科学与工程学院" style="border-radius: 0;" readonly>
 								<div class="input-group-btn" style="margin-left: -300px;">
-									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<button  type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 										学院<span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu pull-right">
 										<li>
-											<a onclick="choosevalue()">value</a>
+											<a id="wenfaxueyuan" onclick="choosevalue1()" style="cursor: pointer;">文法学院</a>
 										</li>
 										<li>
-											<a>文法学院</a>
+											<a id="huanzixueyuan" onclick="choosevalue2()" style="cursor: pointer;">环境与资源学院</a>
 										</li>
 										<li>
-											<a>经济管理学院</a>
+											<a id="jingguanxueyuan" onclick="choosevalue3()" style="cursor: pointer;">经济管理学院</a>
 										</li>
 										<li>
-											<a>机电与信息工程学院</a>
+											<a id="jidianxueyuan" onclick="choosevalue4()" style="cursor: pointer;">机电与信息工程学院</a>
 										</li>
 										<li>
-											<a>环境与资源学院</a>
+											<a id="jiyuan" onclick="choosevalue5()" style="cursor: pointer;">计算机科学与工程学院</a>
 										</li>
 										<li>
 											<a>...</a>
@@ -266,8 +273,8 @@
 						</div>
 					</div>
 					<button style="margin-top: 100px;margin-left: -250px;" type="submit" class="btn btn-warning" onclick="regist()">
-							保存修改
-						</button>
+						保存修改
+					</button>
 				</div>
 				<div id="jobInfo" style="margin-top: -20px; display: none;">
 					让我们知道你的公司，给校友们更多的工作机会。
@@ -281,6 +288,15 @@
 						<button style="margin-top: 50px;margin-left: 200px;" type="submit" class="btn btn-warning" onclick="regist()">
 							保存修改
 						</button>
+					</div>
+				</div>
+				<div id="imageInfo" style="display: none;">
+					<div style="height: 400px;">
+						<img id="target" src="image/xuwanting.jpg" style="max-height: 400px;max-width: 400px;"/>
+						<img src="image/xuwanting.jpg" style="max-height: 100px;max-width: 100px;margin-top: -230px;margin-left: 30px;" />
+					</div>
+					<div>
+						<p>选择头像上传</p>
 					</div>
 				</div>
 			</div>
@@ -332,6 +348,10 @@
 		function toimageInfo() {
 			$("#infoTitle").text("更换头像");
 			$("#baseInfo").css('display', 'none');
+			$("#eduInfo").css('display', 'none');
+			$("#jobInfo").css('display', 'none');
+			$("#imageInfo").css('display', 'block');
+
 		}
 
 		function tobandInfo() {
@@ -343,10 +363,32 @@
 			$("#infoTitle").text("语言设置");
 			$("#baseInfo").css('display', 'none');
 		}
-		function choosevalue(var aaa){
-			//alert("nimeimei");
-			alert($().text());
+
+		function choosevalue1() {
+			var value = $("#wenfaxueyuan").text();
+			$("#colloege").attr('value', value);
 		}
+
+		function choosevalue2() {
+			var value = $("#huanzixueyuan").text();
+			$("#colloege").attr('value', value);
+		}
+
+		function choosevalue3() {
+			var value = $("#jingguanxueyuan").text();
+			$("#colloege").attr('value', value);
+		}
+
+		function choosevalue4() {
+			var value = $("#jidianxueyuan").text();
+			$("#colloege").attr('value', value);
+		}
+
+		function choosevalue5() {
+			var value = $("#jiyuan").text();
+			$("#colloege").attr('value', value);
+		}
+
 	</script>
 </html>
 
