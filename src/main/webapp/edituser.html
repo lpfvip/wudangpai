@@ -8,7 +8,6 @@
 		<meta name="author" content="Sxfszwr" />
 
 		<link rel="stylesheet" type="text/css" href="css/jquery.Jcrop.css"/>
-		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="css/datepicker.css" />
 		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
@@ -293,13 +292,14 @@
 				</div>
 				<div id="imageInfo" style="display: none;">
 					<div style="height: 400px;">
-						<img id="xuwanting" src="image/xuwanting.jpg" />
-						<img src="image/xuwanting.jpg" style="max-height: 100px;max-width: 100px;" />
+						<img src="image/xuwanting.jpg"/>
 					</div>
+					<hr />
 					<div>
-						<p>
-							选择头像上传
-						</p>
+						<div>
+							<button style="margin-top: 20px;" type="submit" class="btn btn-warning" onclick="">本地上传</button>
+							<button style="margin-top: 20px;margin-left: 50px;" type="submit" class="btn btn-warning" onclick="">视频拍照</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -310,6 +310,9 @@
 	<script type="text/javascript">
 		$("#birthdate").datepicker({
 			format : 'mm/dd/yyyy'
+		});
+		$(document).ready(function() {
+			$("#target").Jcrop();
 		});
 		function showbaseInfo() {
 			var arrowClass = $("#downarrow").attr('class');
@@ -391,11 +394,6 @@
 			var value = $("#jiyuan").text();
 			$("#colloege").attr('value', value);
 		}
-
-
-		$(document).ready(function() {
-			$("#xuwanting").Jcrop();
-		});
 
 	</script>
 </html>
