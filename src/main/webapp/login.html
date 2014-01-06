@@ -7,6 +7,7 @@
 		<title>login</title>
 		<meta name="author" content="Sxfszwr" />
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.7.min.js"></script>
 		<style>
 			* {
 				margin: 0;
@@ -46,7 +47,7 @@
 					<input style="width: 200px;margin-left: 20px;" type="text" class="form-control" id="username" placeholder="Username" />
 					<input style="width: 200px;margin-left: 20px;margin-top:20px;" type="password" class="form-control" id="password" placeholder="Password" />
 				</div>
-				<button style="margin-left: 25px;margin-top: 15px;" type="submit" class="btn btn-default">
+				<button style="margin-left: 25px;margin-top: 15px;" class="btn btn-default" onclick="login()">
 					登录
 				</button>
 				<button style="margin-left: 45px;margin-top: 15px;" type="submit" class="btn btn-default">
@@ -63,5 +64,20 @@
 		</div>
 
 	</body>
+	<script>
+		function login(){
+			var name = $("#username").val();
+			var passwd = $("#password").val();
+			alert("come in login");
+			$.ajax({
+				url: "/wudangpai/login.do",
+				type: "POST",
+				data:{
+					username:name,
+					password:passwd
+				}
+			});
+		}
+	</script>
 </html>
 
