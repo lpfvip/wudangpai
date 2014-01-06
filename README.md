@@ -5,8 +5,7 @@
 #####使用MyBatisGenerator生成数据库
 去到wudangpai/src/main/config目录下执行下面的命令
 
-	java -jar mybatis-generator-core-1.3.1.jar \
-	 -configfile mybatisConfig.xml -overwrite
+	java -jar mybatis-generator-core-1.3.2.jar -configfile generator.xml -overwrite
 	
 #####运行程序所需的环境
 
