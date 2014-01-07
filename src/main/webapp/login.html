@@ -65,19 +65,28 @@
 
 	</body>
 	<script>
-		function login(){
-			var name = $("#username").val();
-			var passwd = $("#password").val();
-			alert("come in login");
-			$.ajax({
-				url: "/wudangpai/login.do",
-				type: "POST",
-				data:{
-					username:name,
-					password:passwd
-				}
-			});
-		}
+	function login(){
+		var name = $("#username").val();
+		var passwd = $("#password").val();
+		$.ajax({
+			url: "/wudangpai/login.do",
+			type: "POST",
+			dataType : "json",
+			data:{
+				username:name,
+				password:passwd
+			}
+		}).done(function(msg){
+			var error_code = msg.error_code;
+			console.log(error_code);
+			if(error_code == 0){
+				window.location.href='home.html';
+			}
+			if(error_code == 1){
+				window.location.href='login.html';
+			}
+		});
+	}
 	</script>
 </html>
 
