@@ -1,6 +1,6 @@
 package org.wudang.model;
 
-public class RequestResult {
+public class ResultObject {
 	public String getError_message() {
 		return error_message;
 	}

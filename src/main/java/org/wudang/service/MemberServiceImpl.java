@@ -35,8 +35,13 @@ public class MemberServiceImpl implements MemberServiceI {
 	public boolean Register(Member member) {
 		if (member == null)
 			return false;
-		if (memberMapper.insertSelective(member) == 0)
-			return true;
+		try {
+			if (memberMapper.insertSelective(member) == 1)
+				return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
 		return false;
 	}
 
